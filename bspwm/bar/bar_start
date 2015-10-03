@@ -1,0 +1,26 @@
+#!/bin/bash
+
+. $(dirname $0)/bar_config
+
+[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
+mkfifo "$PANEL_FIFO"
+
+[ -e "$PANEL_FIFO2" ] && rm "$PANEL_FIFO2"
+mkfifo "$PANEL_FIFO2"
+
+bspc control --subscribe > "$PANEL_FIFO" &
+xprop -spy -root _NET_ACTIVE_WINDOW | sed -un 's/.*\(0x.*\)/WIN\1/p' > "$PANEL_FIFO2" &
+
+cat $PANEL_FIFO | while read -r line; do
+    $(dirname $0)/bar
+done &
+
+cat $PANEL_FIFO2 | while read -r line; do
+    $(dirname $0)/bar
+done &
+
+while true; do
+    $(dirname $0)/bar
+    sleep 1
+done &
+

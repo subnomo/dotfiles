@@ -1,0 +1,61 @@
+#!/bin/bash
+# Lemonbar config
+
+PANEL_FIFO="/tmp/lemonbar_${USER}"
+PANEL_FIFO2="/tmp/lemonbar2_${USER}"
+PANEL_FIFO3="/tmp/conky_${USER}"
+geometry="x14"
+
+font="-xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1"
+iconfont="-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1"
+
+# Colors
+color_back="#FFF5F5F5"              # Default background
+color_fore="#FF7F8C8D"              # Default foreground
+color_white="#FFFFFFFF"
+color_light_grey="#FFE0E0E0"
+color_grey="#FFBDC3C7"
+color_dark="#FF2C3E50"
+color_text="#FF95A5A6"
+color_head="#FF3498DB"              # Background for first element
+color_sec_b2="#FF454A4F"            # Background for section 2
+color_sec_b3="#FF60676E"            # Background for section 3
+color_icon="#FF979997"              # For icons
+color_mail="#FFCE935F"              # Background color for mail alert
+color_chat="#FFCC6666"              # Background color for chat alert
+color_cpu="#FF5F819D"               # Background color for cpu alert
+color_net="#FF5E8D87"               # Background color for net alert
+color_disable="#FF1D1F21"           # Foreground for disable elements
+color_wsp="#FF0F85D1"               # Background for selected workspace
+
+# Char glyphs for powerline fonts
+sep_left=""                        # Powerline separator left
+sep_right=""                       # Powerline separator right
+sep_l_left=""                      # Powerline light separator left
+sep_l_right=""                     # Powerline light sepatator right
+
+# Icons from Siji https://github.com/gstk/siji
+icon_clock="\ue015"                 # Clock icon
+icon_calendar="\ue1cd"              # Calendar icon
+icon_cpu="\ue026"                   # CPU icon
+icon_mem="\ue021"                   # RAM icon
+icon_dl="\ue061"                    # Downloading icon
+icon_ul="\ue060"                    # Uploading icon
+icon_batt0="\ue1fd"                 # Empty battery icon
+icon_batt1="\ue1fe"                 # Med battery icon
+icon_batt2="\ue1ff"                 # Full battery icon
+icon_batt3="\u201"                  # Charging battery icon
+icon_wifi0="\ue0f1"                 # Low wifi icon
+icon_wifi1="\ue0f2"                 # Med wifi icon
+icon_wifi2="\ue0f3"                 # Full wifi icon
+icon_vol="\ue050"                   # Volume icon
+icon_vol_mute="\ue04f"              # Muted volume icon
+icon_hdd="\ue0ab"                   # Hard drive icon
+icon_home="\ue0b2"                  # Home icon
+icon_mail="\ue1a8"                  # Mail icon
+icon_chat="\ue1a7"                  # Chat bubble icon
+icon_music="\ue1a6"                 # Music icon
+icon_window="\ue0b9"                # Window icon
+icon_contact="\ue074"               # Contact / friends icon
+icon_arch="\ue00e"                  # Arch linux icon
+

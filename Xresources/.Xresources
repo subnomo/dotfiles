@@ -1,0 +1,100 @@
+URxvt.scrollBar: false
+Xcursor.theme: Win8
+
+URxvt.perl-ext-common: default,matcher,clipboard
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
+URxvt.perl-lib: /usr/lib/urxvt/perl
+
+Xft.antialias: 1
+Xft.autohint: 0
+Xft.dpi: 96
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
+
+xclock*majorColor: #9a875f
+xclock*minorColor: #9a875f
+xclock*minuteColor: #9a875f
+xclock*hourColor: #9a875f
+xclock*secondColor: #9a875f
+
+! Clipboard
+URxvt.keysym.Control-Shift-C: perl:clipboard:copy
+URxvt.keysym.Control-Shift-V: perl:clipboard:paste
+URxvt.keysym.C-M-v: perl:clipboard:paste_escaped
+URxvt.clipboard.copycmd: xsel -ib
+URxvt.clipboard.pastecmd: xsel -ob
+
+! Fonts !
+URxvt.font: xft:SourceCodePro:size=14
+
+! Disable ctrl+shift thingy
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+! Rofi !
+rofi.terminal: urxvt
+rofi.lines: 3
+rofi.eh: 2
+rofi.width: 100
+rofi.padding: 800
+rofi.opacity: 95
+rofi.bw: 0
+rofi.bc: #282828
+rofi.bg: #282828
+rofi.fg: #928374
+rofi.hlbg: #282828
+rofi.hlfg: #ebdbb2
+
+! Ricing !
+
+#define base00 #2C3E50
+#define base01 #34495E
+#define base02 #7F8C8D
+#define base03 #95A5A6
+#define base04 #BDC3C7
+#define base05 #e0e0e0
+#define base06 #f5f5f5
+#define base07 #ECF0F1
+#define base08 #E74C3C
+#define base09 #E67E22
+#define base0A #F1C40F
+#define base0B #2ECC71
+#define base0C #1ABC9C
+#define base0D #3498DB
+#define base0E #9B59B6
+#define base0F #be643c
+
+*.foreground:   base02
+*.background:   base07
+*.cursorColor:  base02
+
+*.color0:       base00
+*.color1:       base08
+*.color2:       base0B
+*.color3:       base0A
+*.color4:       base0D
+*.color5:       base0E
+*.color6:       base0C
+*.color7:       base05
+
+*.color8:       base03
+*.color9:       base09
+*.color10:      base01
+*.color11:      base02
+*.color12:      base04
+*.color13:      base06
+*.color14:      base0F
+*.color15:      base07
+
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+! use 'shell' template to set these if necessary
+*.color16:      base09
+*.color17:      base0F
+*.color18:      base01
+*.color19:      base02
+*.color20:      base04
+*.color21:      base06
+
