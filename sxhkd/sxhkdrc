@@ -94,6 +94,9 @@ super + space
 super + Tab
     ~/.rofi.sh
 
+super + d
+    ~/.drawterm
+
 # Raises volume
 XF86AudioRaiseVolume
 	amixer set Master 2%+
