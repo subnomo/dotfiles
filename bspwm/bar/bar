@@ -112,7 +112,7 @@ date="%{F${color_grey}}${sep_left}%{B${color_grey} F${color_icon}} ${icon_calend
 
 time="%{F${color_head}}${sep_left}%{B${color_head} F${color_white}} ${icon_clock} $time"
 
-batt="$(acpi --battery | cut -d, -f2 | cut -c2-3)"
+batt="$(acpi --battery | cut -d, -f2 | cut -c2- | rev | cut -c 2- | rev)"
 batt_icon="${icon_batt0}"
 
 if (( batt < 20 )); then
