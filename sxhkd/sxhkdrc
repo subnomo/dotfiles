@@ -2,7 +2,7 @@
 # bspwm hotkeys
 #
 
-super + q
+super + shift + q
     ~/.config/bspwm/bar/clean.sh; \
     bspc quit
 

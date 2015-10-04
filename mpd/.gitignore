@@ -1,5 +1,2 @@
-mpdstate
-database
-log
-pid
-sticker.sql
+*
+!mpd.conf
