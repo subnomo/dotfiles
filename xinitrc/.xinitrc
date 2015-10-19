@@ -1,3 +1,5 @@
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
 # . /etc/X11/xinit/xinitrc.d/30-dbus.sh

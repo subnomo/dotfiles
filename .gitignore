@@ -1,4 +1,3 @@
 # Don't include logs or history
 *.log
 *_history
-

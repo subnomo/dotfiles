@@ -13,4 +13,4 @@ set -g OMF_CONFIG $HOME/.config/omf
 source $OMF_PATH/init.fish
 
 eval sh $HOME/.config/base16-shell/base16-flat.light.sh
-mpd
+

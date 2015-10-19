@@ -119,7 +119,7 @@ if (( batt < 20 )); then
     batt_icon="${icon_batt0}"
 elif (( batt < 80 )); then
     batt_icon="${icon_batt1}"
-elif (( batt > 80 )); then
+elif (( batt >= 80 )); then
     batt_icon="${icon_batt2}"
 fi
 
