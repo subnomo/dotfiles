@@ -97,6 +97,14 @@ super + Tab
 super + d
     ~/.drawterm
 
+# Decrease brightness
+XF86KbdBrightnessDown
+    xbacklight -dec 5
+
+# Increase brightness
+XF86KbdBrightnessUp
+    xbacklight -inc 5
+
 # Raises volume
 XF86AudioRaiseVolume
 	amixer set Master 2%+

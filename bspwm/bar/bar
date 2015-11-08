@@ -34,6 +34,8 @@ for (( i=0; i<${#workspaces}; i++ )); do
         misc="web"
     elif [ "$workspace" == "3" ]; then
         misc="chat"
+    elif [ "$workspace" == "4" ]; then
+        misc="dev"
     elif [ "$workspace" == "9" ]; then
         misc="steam"
     fi
