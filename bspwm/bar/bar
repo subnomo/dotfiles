@@ -92,6 +92,7 @@ music="%{F${color_light_grey}}${sep_left}%{B${color_light_grey} F${color_grey}}$
 # TODO: Change this to actually update for incoming chat messages
 chat="%{F${color_chat}}${sep_left}%{F${color_back} B${color_chat}} ${icon_chat} 1 ${sep_l_left} ${icon_contact} oui"
 
+# FIXME: This works, but slows down everything else :( Fix this.
 get_unread () {
     curl -u $EMAIL_USERNAME:$EMAIL_PASSWORD --silent "https://mail.google.com/mail/feed/atom" |
     grep -oPm1 "(?<=<title>)[^<]+" |
@@ -99,9 +100,10 @@ get_unread () {
     wc -l
 }
 
-mail="%{F${color_grey}}${sep_left}%{B${color_grey} F${color_fore}} ${icon_mail} $(get_unread)"
+mail="%{F${color_grey}}${sep_left}%{B${color_grey} F${color_fore}} ${icon_mail} 0"
 
-cpu="$(ps -eo pcpu | awk 'BEGIN {sum=0.0f} {sum+=$1} END {print sum}')%%"
+cpudir=$(dirname $0)/cpu
+cpu="$(<$cpudir)%%"
 ram="$(free -m | awk 'NR == 2 {gsub(/%/,""); print $3}')M"
 sys="%{F${color_light_grey}}${sep_left}%{B${color_light_grey} F${color_fore}} ${icon_cpu} $cpu ${sep_l_left} ${icon_mem} $ram"
 
