@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cpu=$(dirname $0)/cpu
+cpu=/tmp/cpu
 
 if [ -e $cpu ]; then
     rm $cpu

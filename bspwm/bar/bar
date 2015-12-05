@@ -102,8 +102,7 @@ get_unread () {
 
 mail="%{F${color_grey}}${sep_left}%{B${color_grey} F${color_fore}} ${icon_mail} 0"
 
-cpudir=$(dirname $0)/cpu
-cpu="$(<$cpudir)%%"
+cpu="$(</tmp/cpu)%%"
 ram="$(free -m | awk 'NR == 2 {gsub(/%/,""); print $3}')M"
 sys="%{F${color_light_grey}}${sep_left}%{B${color_light_grey} F${color_fore}} ${icon_cpu} $cpu ${sep_l_left} ${icon_mem} $ram"
 
