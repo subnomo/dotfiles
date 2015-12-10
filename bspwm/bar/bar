@@ -87,7 +87,7 @@ title="%{F${color_fore}}$(xtitle -t 50)"
 
 ### STATS ###
 
-music="%{F${color_light_grey}}${sep_left}%{B${color_light_grey} F${color_grey}}${sep_left}%{B${color_grey} F${color_fore}} ${icon_music} $(mpc current -f '[[%artist% - ]%title%]|[%file%]' 2>&1 | head -c 70)"
+music="%{F${color_light_grey}}${sep_left}%{B${color_light_grey} F${color_grey}}%{A:./music.sh 15:}${sep_left}%{B${color_grey} F${color_fore}} ${icon_music} $(mpc current -f '[[%artist% - ]%title%]|[%file%]' 2>&1 | head -c 70)%{A}"
 
 # TODO: Change this to actually update for incoming chat messages
 chat="%{F${color_chat}}${sep_left}%{F${color_back} B${color_chat}} ${icon_chat} 1 ${sep_l_left} ${icon_contact} oui"
