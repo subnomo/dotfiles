@@ -22,7 +22,7 @@ if [[ -z $pid ]]; then
         echo "Artist: $artist";
         echo "Album: $album";
         echo "Year: $date";
-    ) | dzen2 -p $1 -fn $font -l 7 -w $music_width -x $musicx -y $musicy -e 'onstart=hide,uncollapse;onexit=exec: killall feh;button1=exit;button3=exit;'
+    ) | dzen2 -p $1 -fn $font -l 7 -w $music_width -x $musicx -y $musicy -e 'onstart=hide,uncollapse;onexit=exec: killall feh;button1=exit;button3=exit;' &
 fi &
 
 # Get album art
@@ -37,7 +37,14 @@ albumArt="$HOME/Music/.artwork/$artCode.jpg"
 
 # If the art does not exist, get it from iTunes
 if [ ! -f "$albumArt" ]; then
-    reqUrl="http://itunes.apple.com/search?term=${track// /+}+${artist// /+}&limit=1"
+    # Sanitize strings
+    track=${track// /+}
+    track=${track//&/}
+
+    artist=${artist// /+}
+    artist=${artist//&/}
+
+    reqUrl="http://itunes.apple.com/search?term=$track+$artist&limit=1"
     songJSON=$(curl -s $reqUrl)
 
     albumArtUrl=$(echo $songJSON | jq -r '.results[0].artworkUrl100')
