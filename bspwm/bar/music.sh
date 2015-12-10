@@ -28,7 +28,7 @@ fi &
 # Get album art
 
 if [ ! -d "$HOME/Music/.artwork" ]; then
-    mkdir "$HOME/Music/.artwork"
+    mkdir -p "$HOME/Music/.artwork"
 fi
 
 # Create unique name for specific album
