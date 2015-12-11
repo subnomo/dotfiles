@@ -35,6 +35,6 @@ bspc config focused_frame_opacity 0.1
 cd ~/.config/bspwm/bar
 
 ./clean.sh
-./cpu.sh
-./mail.sh
+./cpu.sh &
+./mail.sh &
 ./run.sh &

@@ -17,4 +17,4 @@ get_unread () {
 while true; do
     echo $(get_unread) > $unread_mail
     sleep 300
-done &
+done

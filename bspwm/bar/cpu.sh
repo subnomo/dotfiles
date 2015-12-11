@@ -16,4 +16,4 @@ while true; do
     prevtotal=$total
 
     sleep 5
-done &
+done
