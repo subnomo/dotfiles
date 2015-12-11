@@ -11,17 +11,26 @@ date=$(mpc current -f %date%)
 date=${date:0:4}
 track=$(mpc current -f %title%)
 
-# TODO: Add music controls
+# Icons
+prev=$(dirname $0)/icons/prev.xbm
+next=$(dirname $0)/icons/next.xbm
+pause=$(dirname $0)/icons/pause.xbm
+play=$(dirname $0)/icons/play.xbm
+
+perc=$(mpc | awk 'NR == 2 {gsub(/[()%]/,""); print $4}')
+percbar=$(echo -e "$perc" | gdbar -fg $color_music_hl2 -h 1 -w $(($music_width-25)))
 
 # Make sure only one dzen applet is running
 pid=$(pidof dzen2)
 if [[ -z $pid ]]; then
     (
         echo "";
-        echo "Track: $track";
-        echo "Artist: $artist";
-        echo "Album: $album";
-        echo "Year: $date";
+        echo "  ^fg($color_music_hl)Track:^fg()  $track";
+        echo "  ^fg($color_music_hl)Artist:^fg() $artist";
+        echo "  ^fg($color_music_hl)Album:^fg()  $album";
+        echo "  ^fg($color_music_hl)Year:^fg()   $date";
+        echo "  $percbar";
+        echo "           ^ca(1, mpc prev) ^i($prev)  ^ca()^ca(1, mpc pause)  ^i($pause)  ^ca()^ca(1, mpc play)  ^i($play)  ^ca()^ca(1, mpc next)  ^i($next)  ^ca()"
     ) | dzen2 -p $1 -fn $font -l 7 -w $music_width -x $musicx -y $musicy -e 'onstart=hide,uncollapse;onexit=exec: killall feh;button1=exit;button3=exit;' &
 fi &
 

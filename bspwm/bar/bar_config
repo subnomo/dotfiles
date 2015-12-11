@@ -27,7 +27,8 @@ color_cpu="#FF5F819D"               # Background color for cpu alert
 color_net="#FF5E8D87"               # Background color for net alert
 color_disable="#FF1D1F21"           # Foreground for disable elements
 color_wsp="#FF0F85D1"               # Background for selected workspace
-color_music_hl="#c0b18b"            # Music highlight color
+color_music_hl="#3498DB"            # Music highlight color
+color_music_hl2="#E67E22"           # Music highlight color #2
 
 # Dzen positioning
 music_width=250
