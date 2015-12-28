@@ -57,7 +57,7 @@ if [ ! -f "$albumArt" ]; then
     songJSON=$(curl -s $reqUrl)
 
     albumArtUrl=$(echo $songJSON | jq -r '.results[0].artworkUrl100')
-    curl $albumArtUrl > $albumArt
+    curl -s $albumArtUrl > $albumArt
 fi
 
 feh -x -B black -^ "" -g 94x94+$(($musicx-97))+$(($musicy+14)) -Z "$albumArt" &
