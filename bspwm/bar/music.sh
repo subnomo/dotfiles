@@ -41,7 +41,7 @@ if [ ! -d "$HOME/Music/.artwork" ]; then
 fi
 
 # Create unique name for specific album
-artCode=$(echo "$album $artist" | base64)
+artCode=$(echo "$album $artist" | base64 | awk 'BEGIN{ORS="";} {print}')
 albumArt="$HOME/Music/.artwork/$artCode.jpg"
 
 # If the art does not exist, get it from iTunes
@@ -57,7 +57,7 @@ if [ ! -f "$albumArt" ]; then
     songJSON=$(curl -s $reqUrl)
 
     albumArtUrl=$(echo $songJSON | jq -r '.results[0].artworkUrl100')
-    curl -s $albumArtUrl > $albumArt
+    curl $albumArtUrl > $albumArt
 fi
 
 feh -x -B black -^ "" -g 94x94+$(($musicx-97))+$(($musicy+14)) -Z "$albumArt" &
