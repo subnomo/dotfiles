@@ -28,7 +28,7 @@ URxvt.clipboard.copycmd: xsel -ib
 URxvt.clipboard.pastecmd: xsel -ob
 
 ! Fonts !
-URxvt.font: xft:SourceCodePro:size=10
+URxvt.font: xft:Sauce Code Powerline:size=10
 
 ! Disable ctrl+shift thingy
 URxvt.iso14755: false
