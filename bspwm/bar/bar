@@ -99,8 +99,8 @@ ram="$(free -m | awk 'NR == 2 {gsub(/%/,""); print $3}')M"
 sys="%{F${color_light_grey}}${sep_left}%{B${color_light_grey} F${color_fore}} ${icon_cpu} $cpu ${sep_l_left} ${icon_mem} $ram"
 
 rootFree="$(df / | awk '{ sum+=$5 } END { print sum }')%%"
-homeFree="$(df /home | awk '{ sum+=$5 } END { print sum }')%%"
-disk="%{F${color_grey}}${sep_left}%{B${color_grey} F${color_icon}} ${icon_hdd}%{F${color_fore}} $rootFree%{F${color_icon}} ${sep_l_left} %{T2}${icon_home}%{T1}%{F${color_fore}} $homeFree"
+#homeFree="$(df /home | awk '{ sum+=$5 } END { print sum }')%%"
+disk="%{F${color_grey}}${sep_left}%{B${color_grey} F${color_icon}} ${icon_hdd}%{F${color_fore}} $rootFree"
 
 # TODO: Change this to update volume icon
 vol="$((pactl list sinks | grep -m2 "Volume: front-left:")| awk '{print $5}' | tail -n1)%"
