@@ -6,14 +6,14 @@ bspc config top_padding	       14
 
 bspc monitor -d 0 1 2 3 4 5 6 7 8 9
 
-bspc rule -a Gimp desktop=^7 follow=on floating=on
-bspc rule -a mplayer2 floating=on
+bspc rule -a Gimp desktop=^7 follow=on state=floating
+bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a lighthouse focus=on
 bspc rule -a Screenkey manage=off
-bspc rule -a Steam desktop=^9 floating=on
-bspc rule -a feh floating=on focus=off
-bspc rule -a gifview floating=on focus=on
+bspc rule -a Steam desktop=^9 state=floating
+bspc rule -a feh state=floating focus=off
+bspc rule -a gifview state=floating focus=on
 bspc rule -a qbittorrent desktop=^8
 
 # Visual options
@@ -21,14 +21,10 @@ bspc config split_ratio         0.50
 bspc config borderless_monocle  true
 bspc config gapless_monocle     true
 bspc config focus_follows_pointer true
-bspc config auto_alternate true
-bspc config auto_cancel true
 bspc config normal_border_color "#ECF0F1"
 bspc config active_border_color "#3498DB"
 bspc config focused_border_color "#95A5A6"
 bspc config presel_border_color "#7F8C8D"
-bspc config urgent_border_color "#9F7155"
-bspc config focused_locked_border_color "#9a875f"
 bspc config normal_frame_opacity 0.0
 bspc config focused_frame_opacity 0.1
 
