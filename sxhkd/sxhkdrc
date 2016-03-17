@@ -10,63 +10,63 @@ super + l
     ~/.lock.sh
 
 super + w
-	bspc window -c
+	bspc node -c
 
 super + t
 	bspc desktop -l next
 
 super + b
-	bspc desktop -B
+	bspc node -B
 
 super + {s,f}
-	bspc window -t {floating,fullscreen}
+	bspc node -t {~floating,fullscreen}
 
-alt + {Tab,grave}
-	bspc {window,desktop} -f last
+alt + Tab
+	bspc desktop -f last
 
 super + apostrophe
-	bspc window -s last
+	bspc node -s last
 
 super + {o,i}
 	bspc control --record-history off; \
-	bspc window {older,newer} -f; \
+	bspc node {older,newer} -f; \
 	bspc control --record-history on
 
 super + y
-	bspc window -w last.manual
+	bspc node -n last.manual
 
 super + m
-	bspc window -s biggest
+	bspc node -s biggest
 
 super + {_,shift + }{h,j,k,l}
-	bspc window -{f,s} {left,down,up,right}
+	bspc node -{f,s} {west,south,north,east}
 
 super + {_,shift + }c
-	bspc window -f {next,prev}
+	bspc node -f {next,prev}
 
 super + {comma,period}
-	bspc desktop -C {backward,forward}
+	bspc node -C {backward,forward}
 
 super + bracket{left,right}
 	bspc desktop -f {prev,next}
 
 super + ctrl + {Left,Down,Up,Right}
-	bspc window -p {left,down,up,right}
+	bspc node -p {west,south,north,east}
 
 super + ctrl + {_,shift + }space
-	bspc {window -p cancel,desktop -c}
+	bspc {node -p cancel,desktop -c}
 
 super + alt + {h,j,k,l}
-	bspc window -e {left -10,down +10,up -10,right +10}
+	bspc node -e {left -10,down +10,up -10,right +10}
 
 super + alt + shift + {h,j,k,l}
-	bspc window -e {right -10,up +10,down -10,left +10}
+	bspc node -e {right -10,up +10,down -10,left +10}
 
 super + ctrl + {1-9}
-	bspc window -r 0.{1-9}
+	bspc node -r 0.{1-9}
 
 super + {_,shift + }{1-9,0}
-    bspc {desktop -f,window -d} ^{1-9,10}; \
+    bspc {desktop -f,node -d} ^{1-9,10}; \
     ~/.config/bspwm/bar
 
 ~button1
