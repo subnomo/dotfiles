@@ -1,3 +1,3 @@
 function netflix
-	chromium --app="https://netflix.com/"
+	google-chrome-app --app="https://netflix.com/"
 end

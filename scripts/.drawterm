@@ -19,7 +19,7 @@ aX=$(( $X - $M )) && aY=$(( $Y - $M ))
 aW=$(( $W + ( $M * 2 ) )) && aH=$(( $H + ( $M * 2 ) ))
 
 # Make floating for bspwm
-bspc rule -a \* --one-shot floating=true
+bspc rule -a \* --one-shot state=floating
 
 if [ "$W" -gt "1" ]; then
     # Calculate width and height to block/font size

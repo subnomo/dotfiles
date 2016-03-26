@@ -65,11 +65,14 @@ super + alt + shift + {h,j,k,l}
 super + ctrl + {1-9}
 	bspc node -r 0.{1-9}
 
-super + {_,shift + }{1-9,0}
-    kind={desktop,monitor}; \
+super + {1-9,0}
+    kind={desktop}; \
     item="^{1-9,10}"; \
     bspc query --"$kind"s --"$kind" "$\{item\}.focused" > /dev/null && item=last; \
     bspc "$kind" -f "$item"
+
+super + shift + {1-9,0}
+    bspc node -d ^{1-9,10};
 
 ~button1
 	bspc pointer -g focus

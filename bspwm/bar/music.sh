@@ -20,18 +20,27 @@ play=$(dirname $0)/icons/play.xbm
 perc=$(mpc | awk 'NR == 2 {gsub(/[()%]/,""); print $4}')
 percbar=$(echo -e "$perc" | gdbar -fg $color_music_hl2 -h 1 -w $(($music_width-25)))
 
+lyrics="\
+( \
+    echo hi; \
+    echo sup; \
+) \
+"
+
+lyrics=""
+
 # Make sure only one dzen applet is running
 pid=$(pidof dzen2)
 if [[ -z $pid ]]; then
     (
         echo "";
-        echo "  ^fg($color_music_hl)Track:^fg()  $track";
+        echo "^ca(3, $lyrics)  ^fg($color_music_hl)Track:^fg()  $track^ca()";
         echo "  ^fg($color_music_hl)Artist:^fg() $artist";
         echo "  ^fg($color_music_hl)Album:^fg()  $album";
         echo "  ^fg($color_music_hl)Year:^fg()   $date";
         echo "  $percbar";
         echo "           ^ca(1, mpc prev) ^i($prev)  ^ca()^ca(1, mpc pause)  ^i($pause)  ^ca()^ca(1, mpc play)  ^i($play)  ^ca()^ca(1, mpc next)  ^i($next)  ^ca()"
-    ) | dzen2 -p $1 -fn $font -l 7 -w $music_width -x $musicx -y $musicy -e 'onstart=hide,uncollapse;onexit=exec: killall feh;button1=exit;button3=exit;' &
+    ) | dzen2 -p $1 -fn $font -l 7 -w $music_width -x $musicx -y $musicy -e 'onstart=hide,uncollapse;onexit=exec: killall feh;button1=exit' &
 fi &
 
 # Get album art
