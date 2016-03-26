@@ -38,7 +38,7 @@ super + y
 super + m
 	bspc node -s biggest
 
-super + {_,shift + }{h,j,k,l}
+super + {_,shift + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
 
 super + {_,shift + }c
