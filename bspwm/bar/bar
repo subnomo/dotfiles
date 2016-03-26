@@ -79,6 +79,13 @@ for (( i=0; i<${#workspaces}; i++ )); do
     fi
 done
 
+# Blur background if focused workspace has open windows
+if [[ $workspaces == *$current_desktop* ]]; then
+    $HOME/.blur.sh > /dev/null 2>&1 &
+else
+    $HOME/.blur.sh -r > /dev/null 2>&1 &
+fi
+
 ### TITLE ###
 
 win="%{F${color_head} B$color_light_grey %{T2}${icon_window} %{T1}%{F${color_light_grey} B${color_back}}${sep_right}"
