@@ -7,7 +7,7 @@ super + shift + q
     bspc quit
 
 super + l
-    ~/.lock.sh
+    lock.sh
 
 super + w
 	bspc node -c
@@ -97,10 +97,10 @@ super + space
 	dmenu_run
 
 super + Tab
-    ~/.rofi.sh
+    rofi.sh
 
 super + d
-    ~/.drawterm
+    drawterm.sh
 
 # Decrease brightness
 XF86KbdBrightnessDown

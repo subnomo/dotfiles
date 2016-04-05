@@ -81,9 +81,9 @@ done
 
 # Blur background if focused workspace has open windows
 if [[ $workspaces == *$current_desktop* ]]; then
-    $HOME/.blur.sh > /dev/null 2>&1 &
+    blur.sh > /dev/null 2>&1 &
 else
-    $HOME/.blur.sh -r > /dev/null 2>&1 &
+    blur.sh -r > /dev/null 2>&1 &
 fi
 
 ### TITLE ###
