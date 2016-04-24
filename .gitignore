@@ -1,3 +1,6 @@
 # Don't include logs or history
 *.log
 *_history
+
+vim/.vim_runtime/sources_non_forked
+vim/.vim_runtime/sources_forked
