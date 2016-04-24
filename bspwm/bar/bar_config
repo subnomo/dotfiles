@@ -4,6 +4,7 @@
 PANEL_FIFO="/tmp/lemonbar_${USER}"
 PANEL_FIFO2="/tmp/lemonbar2_${USER}"
 PANEL_FIFO3="/tmp/conky_${USER}"
+CHAT="/tmp/weechat_${USER}"
 geometry="x14"
 
 font="-xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1"
