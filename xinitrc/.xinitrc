@@ -10,7 +10,6 @@ lxappearance & sleep 0.5; killall lxappearance &
 # Set fonts
 xset fp+ ~/.fonts/terminesspowerline/
 
-mpd
 ~/.fehbg &
 compton -bc --opengl --vsync opengl-swc --paint-on-overlay
 sxhkd &

@@ -28,7 +28,9 @@ URxvt.clipboard.copycmd: xsel -ib
 URxvt.clipboard.pastecmd: xsel -ob
 
 ! Fonts !
-URxvt.font: xft:Sauce Code Powerline:size=10
+URxvt*font: xft:Source Code Pro:size=10
+
+URxvt.letterSpace: -1
 
 ! Disable ctrl+shift thingy
 URxvt.iso14755: false
@@ -48,7 +50,7 @@ rofi.fg: #928374
 rofi.hlbg: #282828
 rofi.hlfg: #ebdbb2
 
-! Ricing !
+! Ricing
 
 #define base00 #2C3E50
 #define base01 #34495E
@@ -97,4 +99,3 @@ rofi.hlfg: #ebdbb2
 *.color19:      base02
 *.color20:      base04
 *.color21:      base06
-

@@ -32,7 +32,6 @@ if [ "$W" -gt "1" ]; then
         if ps -p $! >/dev/null; then
             sleep .1
 
-            wmctrl -r :ACTIVE: -e 0,$aX,$aY,$aW,$aH
             break
         fi
     done

@@ -1,3 +1,3 @@
 function ssh
-	env TERM=xterm ssh $argv
+	env TERM=linux ssh $argv
 end
