@@ -2,9 +2,7 @@
 " My custom vim config
 "
 
-set background=light
-let base16colorspace=256
-colorscheme base16-flat
+runtime colors.vim
 
 let g:airline_theme="base16"
 let g:airline_right_alt_sep = ''
@@ -26,6 +24,8 @@ let g:ConqueTerm_StartMessages = 0 " display warning messages if conqueTerm is c
 
 " Clear search on esc
 " nnoremap <esc> :noh<return><esc>
+
+set nofoldenable " Disable code folding
 
 let g:pencil#wrapModeDefault = 'soft'
 augroup pencil

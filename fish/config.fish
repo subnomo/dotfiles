@@ -12,8 +12,17 @@ set -g OMF_CONFIG $HOME/.config/omf
 # Load oh-my-fish configuration.
 source $OMF_PATH/init.fish
 
-eval sh $HOME/.config/base16-shell/base16-flat.light.sh
+if test ! -e /tmp/theme
+    echo "light" > /tmp/theme
+end
 
+switch.sh (cat /tmp/theme)
+
+if test -z (pgrep "ssh-agent" > /dev/null)
+    ssh_agent > /dev/null
+end
+
+# Start mpd if not already running
 if test ! -e ~/.config/mpd/pid
     mpd
 end

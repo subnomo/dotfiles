@@ -5,8 +5,9 @@ PANEL_FIFO="/tmp/lemonbar_${USER}"
 PANEL_FIFO2="/tmp/lemonbar2_${USER}"
 PANEL_FIFO3="/tmp/conky_${USER}"
 CHAT="/tmp/weechat_${USER}"
-geometry="x14"
+THEME="/tmp/theme"
 
+geometry="x14"
 font="-xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1"
 iconfont="-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1"
 
@@ -21,7 +22,6 @@ color_text="#FF95A5A6"
 color_head="#FF3498DB"              # Background for first element
 color_sec_b2="#FF454A4F"            # Background for section 2
 color_sec_b3="#FF60676E"            # Background for section 3
-color_icon="#FF979997"              # For icons
 color_mail="#FFCE935F"              # Background color for mail alert
 color_chat="#FFCC6666"              # Background color for chat alert
 color_cpu="#FF5F819D"               # Background color for cpu alert
@@ -30,6 +30,27 @@ color_disable="#FF1D1F21"           # Foreground for disable elements
 color_wsp="#FF0F85D1"               # Background for selected workspace
 color_music_hl="#3498DB"            # Music highlight color
 color_music_hl2="#E67E22"           # Music highlight color #2
+
+# Color switching
+if [ ! -f $THEME ]; then
+    echo "light" > $THEME
+fi
+
+current_theme=$(cat $THEME)
+
+if [[ $current_theme == "light" ]]; then
+    next_color="dark"
+else
+    next_color="light"
+
+    color_back="#FF282A2E"
+    color_fore="#FFC3C3C3"
+    color_white="#FF464B50"
+    color_light_grey="#FF373B41"
+    color_grey="#FF1D1F21"
+    color_head="#FF81A2BE"
+    color_wsp="#ff688FB1"
+fi
 
 # Dzen positioning
 music_width=250
