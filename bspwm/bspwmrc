@@ -29,4 +29,5 @@ cd ~/.config/bspwm/bar
 ./clean.sh
 ./cpu.sh &
 ./mail.sh &
+./irc_ssh.sh &
 ./run.sh &
