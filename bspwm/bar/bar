@@ -164,5 +164,5 @@ fi
 wifi="$(iwgetid -r)"
 wifi="%{F${color_light_grey}}${sep_left}%{B${color_light_grey} F${color_fore}} $wifi_icon%{F${color_fore}} $wifi"
 
-echo -e %{l}$arch ${wsp_array[*]} $win $title %{r}$music $chat $mail $sys $disk $wifi $batt $vol $date $time %{B${color_back}}
+echo -e "%{l}$arch ${wsp_array[*]} $win $title %{r}$music $chat $mail $sys $disk $wifi $batt $vol $date $time %{B${color_back}}"
 
