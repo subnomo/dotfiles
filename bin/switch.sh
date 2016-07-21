@@ -3,8 +3,8 @@
 TMP=/tmp/theme
 
 # Set location of dark and light themes
-DARK=$HOME/.config/base16-shell/base16-tomorrow.dark.sh
-LIGHT=$HOME/.config/base16-shell/base16-flat.light.sh
+DARK=$HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh
+LIGHT=$HOME/.config/base16-shell/scripts/base16-flat.sh
 
 COLORS_XRESOURCES=$HOME/.config/colors/colors.Xresources
 DARK_XRESOURCES=$HOME/.config/colors/dark.Xresources

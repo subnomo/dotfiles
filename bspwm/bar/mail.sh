@@ -13,8 +13,8 @@ get_unread () {
     wc -l
 }
 
-# Check every 5 minutes for mail
+# Check every 15 minutes for mail
 while true; do
     echo $(get_unread) > $unread_mail
-    sleep 300
+    sleep 900
 done

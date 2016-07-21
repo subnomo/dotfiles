@@ -4,8 +4,7 @@
 
 runtime colors.vim
 
-let g:airline_theme="base16"
-let g:airline_right_alt_sep = ''
+let g:airline_right_alt_sep = '|'
 let g:airline_right_sep = ''
 let g:airline_left_alt_sep= ''
 let g:airline_left_sep = ''
@@ -55,3 +54,5 @@ endfunction
 
 autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
+
+let g:ycm_server_python_interpreter="/usr/bin/python2"

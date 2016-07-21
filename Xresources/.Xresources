@@ -53,3 +53,5 @@ rofi.hlfg: #ebdbb2
 
 ! Colors
 #include ".config/colors/colors.Xresources"
+
+*externalBorder: 0px
