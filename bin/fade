@@ -1,0 +1,10 @@
+#!/bin/sh
+# This script takes an image and outputs a faded version
+# Requires: imagemagick
+
+if [ -z $1 ] || [ -z $2 ]; then
+    echo "usage: fade infile outfile"
+    exit 1
+fi
+
+convert $1 -brightness-contrast +8x-20 -level 10% $2

@@ -1,0 +1,9 @@
+#!/bin/bash
+# Generates colorscheme using background
+# Depends on urnn (assuming in $HOME/.config/urnn) and feh
+
+bg=$(cat $HOME/.fehbg | tail -n 1 | cut -d' ' -f 4)
+bg=${bg%\'}
+bg=${bg#\'}
+
+$HOME/.config/urnn/urnn colors $bg | xrdb -merge > /dev/null 2>&1 

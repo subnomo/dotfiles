@@ -1,6 +1,7 @@
 # Don't include logs or history
 *.log
 *_history
+fish/fishd.*
 
 vim/.vim_runtime/sources_non_forked
 vim/.vim_runtime/sources_forked

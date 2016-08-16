@@ -23,8 +23,8 @@ bspc rule -a \* --one-shot state=floating
 
 if [ "$W" -gt "1" ]; then
     # Calculate width and height to block/font size
-    let W=$(( $W / 7 ))-2
-    let H=$(( $H / 15 ))-1
+    let W=$(( $W / 6 ))-1
+    let H=$(( $H / 11 ))-3
 
     urxvt -g $W"x"$H"+"$X"+"$Y &
 

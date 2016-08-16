@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Set this to your system partition.
+# It must be formatted ext4.
+
+device=/dev/sda3
+
+# debugfs requires sudo :(
+if [[ $UID != 0 ]]; then
+    echo "Please run this script with sudo:"
+    echo "sudo age $*"
+    exit 1
+fi
+
+if [ -z $1 ]; then echo "usage: age filename"; exit 1; fi
+
+inode=$(ls -i $1 | cut -d ' ' -f 1)
+
+time=$(debugfs -R "stat <$inode>" $device 2> /dev/null | grep crtime | cut -d' ' -f4-)
+
+echo $time
