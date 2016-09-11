@@ -1,6 +1,6 @@
 function transfer
 	if test (count $argv) -eq 0
-        echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"
+        echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"
         return 1
     end
 

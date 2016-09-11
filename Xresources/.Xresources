@@ -28,10 +28,14 @@ URxvt.clipboard.copycmd: xsel -ib
 URxvt.clipboard.pastecmd: xsel -ob
 
 ! Fonts !
-!URxvt*font: xft:Source Code Pro:size=10
+#define termfont      xft:Tewi:pixelsize=11:antialias=false
+URxvt.font:           termfont
+URxvt.boldFont:       termfont
+URxvt.italicFont:     termfont
+URxvt.boldItalicFont: termfont
 
-URxvt.letterSpace: -1
-URxvt.font: xft:Sauce Code Powerline:size=10
+!URxvt.letterSpace: -1
+!URxvt.font: xft:Sauce Code Powerline:size=10
 
 ! Disable ctrl+shift thingy
 URxvt.iso14755: false
@@ -52,6 +56,59 @@ rofi.hlbg: #282828
 rofi.hlfg: #ebdbb2
 
 ! Colors
-#include ".config/colors/colors.Xresources"
+!*background: #22232d
+!*foreground: #a7a7bc
+!*color0: #161415
+!!*color1: #ce4eb9
+!*color2: #d4dda9
+!*color3: #edb45f
+!*color4: #5fafd6
+!*color5: #cdc4eb
+!*color6: #52a8b8
+!*color7: #5b534c
+!*color8: #363236
+!*color9: #df2730
+!*color10: #d7e851
+!*color11: #f0d491
+!*color12: #a69bb5
+!*color13: #b39fe5
+!*color14: #3ab4d1
+!*color15: #202223
 
-*externalBorder: 0px
+
+! special
+*.foreground:   #777777
+*.background:   #1b1b1b
+*.cursorColor:  #628b87
+
+! black
+*.color0:       #1b1b1b
+*.color8:       #777777
+
+! red
+*.color1:       #7e5c62
+*.color9:       #7e5c62
+
+! green
+*.color2:       #658861
+*.color10:      #658861
+
+! yellow
+*.color3:       #658861
+*.color11:      #658861
+
+! blue
+*.color4:       #628b87
+*.color12:      #628b87
+
+! magenta
+*.color5:       #628b87
+*.color13:      #628b87
+
+! cyan
+*.color6:       #628b87
+*.color14:      #628b87
+
+! white
+*.color7:       #777777
+*.color15:      #777777
