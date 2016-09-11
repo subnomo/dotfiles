@@ -26,7 +26,7 @@ if [ "$W" -gt "1" ]; then
     let W=$(( $W / 6 ))-1
     let H=$(( $H / 11 ))-3
 
-    urxvt -g $W"x"$H"+"$X"+"$Y &
+    urxvtc -g $W"x"$H"+"$X"+"$Y &
 
     for i in {0..49}; do # timeout
         if ps -p $! >/dev/null; then

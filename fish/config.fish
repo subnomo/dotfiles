@@ -10,9 +10,9 @@
 #    eval $HOME/.config/colors/$theme.fish
 #end
 
-if not pgrep -f ssh-agent > /dev/null 
-    ssh_agent > /dev/null 2>&1
-end
+#if not pgrep -f ssh-agent > /dev/null 
+#    ssh_agent > /dev/null 2>&1
+#end
 
 # Start mpd if not already running
 #if test ! -e ~/.config/mpd/pid

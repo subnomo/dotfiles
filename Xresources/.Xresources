@@ -35,7 +35,7 @@ URxvt.italicFont:     termfont
 URxvt.boldItalicFont: termfont
 
 !URxvt.letterSpace: -1
-!URxvt.font: xft:Sauce Code Powerline:size=10
+!URxvt.font: xft:Ubuntu;size=11
 
 ! Disable ctrl+shift thingy
 URxvt.iso14755: false
@@ -90,7 +90,7 @@ rofi.hlfg: #ebdbb2
 *.color9:       #7e5c62
 
 ! green
-*.color2:       #658861
+*.color2:       #1b1b1b
 *.color10:      #658861
 
 ! yellow
