@@ -38,5 +38,5 @@ bspc config focused_frame_opacity 0.1
 
 # ~/time.sh | lemonbar -p &
 
-xrdb ~/.Xresources
-~/.fehbg
+#xrdb ~/.Xresources
+#~/.fehbg

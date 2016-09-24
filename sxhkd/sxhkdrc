@@ -3,7 +3,6 @@
 #
 
 super + shift + q
-    ~/.config/bspwm/bar/clean.sh; \
     bspc quit
 
 super + l
@@ -91,13 +90,13 @@ super + @button{1-3}
 #
 
 super + Return
-    urxvt
+    urxvtc
 
 super + space
     dmenu_run
 
 super + Tab
-    rofi.sh
+    lighthouse | sh
 
 super + d
     drawterm.sh
