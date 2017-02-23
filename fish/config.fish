@@ -34,3 +34,16 @@ end
 #status --is-interactive; and . (pyenv init -|psub)
 #status --is-interactive; and . (pyenv virtualenv-init -|psub)
 #status --is-interactive; and . (rbenv init -|psub)
+
+set -g __fish_history_file        ~/.local/share/fish/fish_history
+set -g __fish_history_backup_file $__fish_history_file.bak
+set -g __fish_history_pid_file    $__fish_history_file.pid
+
+if test -f $__fish_history_backup_file
+    read -l histpid < $__fish_history_pid_file
+    # If the pid no longer has open files, restore the original history file
+    if not lsof -p $histpid >/dev/null
+        mv -f -- $__fish_history_backup_file $__fish_history_file
+        rm -f -- $__fish_history_pid_file
+    end
+end

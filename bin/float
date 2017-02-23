@@ -1,0 +1,3 @@
+#!/bin/sh
+
+bspc rule -a \* --one-shot state=floating

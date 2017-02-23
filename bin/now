@@ -1,0 +1,178 @@
+#!/bin/sh
+#
+# now
+#
+# A simplified wrapper for the `date` command.
+#
+
+show_help () {
+
+cat <<EOF
+Usage: now [options] [formatted_message...]
+
+-h, --help      Show this help message.
+-f, --format    Output using $(which date) style formatting.
+
+day             Gets the day of the week.
+date            Gets the day of the month.
+nicedate        Gets the day of the month with added suffix.
+month           Gets the current month's name.
+year            Gets the current year.
+time            Gets the current time.
+
+Examples:
+
+now                      => It's 2:03 PM on Tuesday, January 31st, 2017.
+now day                  => Tuesday
+now mm/dd/yyyy           => 01/31/2017
+now the year is yyyy!    => the year is 2017!
+now it is tt pp          => it is 2:03 PM
+EOF
+
+}
+
+get_day () {
+    date +"%A"
+}
+
+get_day_num () {
+    date +"%d"
+}
+
+get_day_num_nice () {
+	day=$(date +"%d")
+
+	if [ "${day:0:1}" != "1" ]; then
+        # Add suffix
+		case ${day:1:2} in
+            1) day=$day"st" ;;
+            2) day=$day"nd" ;;
+            3) day=$day"rd" ;;
+            *) day=$day"th" ;;
+        esac
+
+        # Remove leading zero
+        if [ "${day:0:1}" == "0" ]; then
+            day=${day:1}
+        fi
+    else
+        day=$day"th"
+    fi
+
+    echo $day
+}
+
+get_month () {
+    date +"%B"
+}
+
+get_month_num () {
+    date +"%m"
+}
+
+get_year () {
+    date +"%Y"
+}
+
+get_am_pm() {
+    date +"%p"
+}
+
+get_time () {
+    time=$(date +"%X")
+
+    # Remove seconds
+    time=${time:0:5}
+
+    # Remove leading zero
+    if [ "${time:0:1}" == "0" ]; then
+        time=${time:1}
+    fi
+
+    echo $time
+}
+
+fmt () {
+    res=$1
+
+    case $1 in
+        *dd*) res=${res/dd/$(get_day_num)} ;;&
+        *mm*) res=${res/mm/$(get_month_num)} ;;&
+        *yyyy*) res=${res/yyyy/$(get_year)} ;;&
+        *tt*) res=${res/tt/$(get_time)} ;;&
+        *pp*) res=${res/pp/$(get_am_pm)} ;;
+    esac
+
+    echo $res
+
+    if [ "$res" == "$1" ]; then
+        return 1
+    fi
+}
+
+default () {
+    if [ -z "$1" ]; then
+        echo "It's $(get_time) $(get_am_pm) on $(get_day), $(get_month) $(get_day_num_nice), $(get_year)."
+    else
+        out=""
+
+        unknown=false
+        pattern=false
+
+        for var in $@; do
+            res=$(fmt $var)
+            
+            # Check if the only option is unknown
+            if [ "$?" == 1 ] && [ "$pattern" == false ]; then
+                unknown=true
+            else
+                unknown=false
+                pattern=true
+            fi
+
+            out="$out $res"
+        done
+
+        # If only option unknown, show help
+        if [ "$unknown" == true ]; then
+            show_help
+            exit 1
+        fi
+
+        echo $out
+    fi
+}
+
+main () {
+    case $1 in
+        day)
+            get_day
+            ;;
+        date)
+            get_day_num
+            ;;
+        nicedate)
+            get_day_num_nice
+            ;;
+        month)
+            get_month
+            ;;
+        year)
+            get_year
+            ;;
+        time)
+            echo $(get_time) $(get_am_pm)
+            ;;
+        -f|--format)
+            date +"$2"
+            ;;
+        -h|--help)
+            show_help
+            ;;
+        *)
+            default "$@"
+            ;;
+    esac
+}
+
+main "$@"

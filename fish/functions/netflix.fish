@@ -1,3 +1,3 @@
 function netflix
-	google-chrome-app --app="https://netflix.com/"
+	google-chrome-stable --app="https://netflix.com/"
 end

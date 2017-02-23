@@ -1,0 +1,55 @@
+[bar]
+# Update interval, in seconds
+update_interval = 1
+
+separator = " | "
+foreground = "#444444"
+wm = "bspwm"
+
+[[module]]
+align = "left"
+
+    [[module.block]]
+    kind = "workspaces"
+    icon = "\uE001"
+    active_icon = "\uE000"
+
+[[module]]
+align = "center"
+
+    [[module.block]]
+    kind = "title"
+
+[[module]]
+align = "right"
+separator = " | "
+
+    [[module.block]]
+    kind = "wifi"
+    icons = ["\uE0F1", "\uE0F2", "\uE0F3"]
+    icon_align = "left"
+    device = "wlp2s0"
+
+    [[module.block]]
+    kind = "music"
+    command = "gpmdp-remote current"
+    icon = "\uE1A6"
+    icon_align = "left"
+
+    [[module.block]]
+    kind = "battery"
+    # icon = "\uE1FF"
+    icons = ["\uE1FD", "\uE1FE", "\uE1FF"]
+    icon_align = "right"
+
+    [[module.block]]
+    kind = "date"
+    format = "%a %b %d"
+    icon = "\uE1CD"
+    icon_align = "left"
+
+    [[module.block]]
+    kind = "date"
+    format = "%I:%M %p"
+    icon = "\uE015"
+    icon_align = "left"

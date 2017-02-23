@@ -1,0 +1,4 @@
+#!/bin/sh
+
+$(dirname $0)/float
+nohup urxvt >/dev/null 2>&1 &
