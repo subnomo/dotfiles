@@ -19,6 +19,7 @@ align = "center"
 
     [[module.block]]
     kind = "title"
+    max_chars = 75
 
 [[module]]
 align = "right"
