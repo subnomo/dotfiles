@@ -1,0 +1,7 @@
+#!/bin/sh
+
+killall rustabari lemonbar > /dev/null
+rustabari | lemonbar -p -f $iconfont -f "Tewi:size=9" -g 1920x30 &
+
+sleep 0.1
+xdo lower -n lemonbar

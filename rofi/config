@@ -1,0 +1,6 @@
+rofi.width: 20
+rofi.hide-scrollbar: true
+rofi.separator-style: solid
+rofi.font: Tewi 9
+rofi.run-list-command: . aliases.sh
+rofi.run-command: "/bin/bash -i -c '{cmd}'"

@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# Sticky mpv player
+#
+
+
+bspc rule -a mpv --one-shot state=floating sticky=on border=off
+mpv --geometry=640x360+1280+30 --load-unsafe-playlists $@

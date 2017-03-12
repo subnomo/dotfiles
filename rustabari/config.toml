@@ -3,11 +3,19 @@
 update_interval = 1
 
 separator = " | "
+#background = "#fff"
 foreground = "#444444"
 wm = "bspwm"
 
 [[module]]
 align = "left"
+
+    # Add padding
+    [[module.block]]
+    kind = "custom"
+    command = "echo '   '"
+
+[[module]]
 
     [[module.block]]
     kind = "workspaces"
@@ -54,3 +62,10 @@ separator = " | "
     format = "%I:%M %p"
     icon = "\uE015"
     icon_align = "left"
+
+[[module]]
+
+    # Padding
+    [[module.block]]
+    kind = "custom"
+    command = "echo '   '"
