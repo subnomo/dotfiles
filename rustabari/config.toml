@@ -3,8 +3,8 @@
 update_interval = 1
 
 separator = " | "
-#background = "#fff"
-foreground = "#444444"
+#background = "#161719"
+foreground = "#f4dcdc"
 wm = "bspwm"
 
 [[module]]

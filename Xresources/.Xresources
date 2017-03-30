@@ -77,38 +77,38 @@ rofi.hlfg: #ebdbb2
 
 
 ! special
-*.foreground:   #777777
-*.background:   #1b1b1b
-*.cursorColor:  #628b87
-
-! black
-*.color0:       #1b1b1b
-*.color8:       #777777
-
-! red
-*.color1:       #7e5c62
-*.color9:       #7e5c62
-
-! green
-*.color2:       #658861
-*.color10:      #658861
-
-! yellow
-*.color3:       #658861
-*.color11:      #658861
-
-! blue
-*.color4:       #628b87
-*.color12:      #628b87
-
-! magenta
-*.color5:       #628b87
-*.color13:      #628b87
-
-! cyan
-*.color6:       #628b87
-*.color14:      #628b87
-
-! white
-*.color7:       #777777
-*.color15:      #777777
+!*.foreground:   #777777
+!*.background:   #1b1b1b
+!*.cursorColor:  #628b87
+!
+!! black
+!*.color0:       #1b1b1b
+!*.color8:       #777777
+!
+!! red
+!*.color1:       #7e5c62
+!*.color9:       #7e5c62
+!
+!! green
+!*.color2:       #fffff
+!*.color10:      #658861
+!
+!! yellow
+!*.color3:       #658861
+!*.color11:      #658861
+!
+!! blue
+!*.color4:       #628b87
+!*.color12:      #628b87
+!
+!! magenta
+!*.color5:       #628b87
+!*.color13:      #628b87
+!
+!! cyan
+!*.color6:       #628b87
+!*.color14:      #628b87
+!
+!! white
+!*.color7:       #777777
+!*.color15:      #777777

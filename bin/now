@@ -40,11 +40,11 @@ get_day_num () {
 }
 
 get_day_num_nice () {
-	day=$(date +"%d")
+    day=$(date +"%d")
 
-	if [ "${day:0:1}" != "1" ]; then
+    if [ "${day:0:1}" != "1" ]; then
         # Add suffix
-		case ${day:1:2} in
+        case ${day:1:2} in
             1) day=$day"st" ;;
             2) day=$day"nd" ;;
             3) day=$day"rd" ;;
@@ -121,7 +121,7 @@ default () {
 
         for var in $@; do
             res=$(fmt $var)
-            
+
             # Check if the only option is unknown
             if [ "$?" == 1 ] && [ "$pattern" == false ]; then
                 unknown=true
