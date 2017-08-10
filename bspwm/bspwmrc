@@ -1,6 +1,6 @@
 #!/bin/bash
 
-bspc config border_width       7 #5
+bspc config border_width       0 #7
 bspc config window_gap         50 #120
 bspc config top_padding	       0
 

@@ -11,7 +11,7 @@ cat <<EOF
 Usage: now [options] [formatted_message...]
 
 -h, --help      Show this help message.
--f, --format    Output using $(which date) style formatting.
+-f, --format    Output using 'date' command style formatting.
 
 day             Gets the day of the week.
 date            Gets the day of the month.

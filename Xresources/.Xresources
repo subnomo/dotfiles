@@ -6,6 +6,9 @@ URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 URxvt.perl-lib: /usr/lib/urxvt/perl
 
+! Border
+URxvt.internalBorder: 24
+
 Xft.antialias: 1
 Xft.autohint: 0
 Xft.dpi: 96
