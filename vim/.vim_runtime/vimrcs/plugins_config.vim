@@ -101,10 +101,6 @@ au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
       \ 'colorscheme': 'wombat',
-      \ }
-
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ ['mode', 'paste'],
       \             ['fugitive', 'readonly', 'filename', 'modified'] ],
@@ -159,7 +155,6 @@ func! SyntasticCheckCoffeescript()
     execute "SyntasticCheck"
     execute "Errors"
 endfunc
-
 nnoremap <silent> <leader>c :call SyntasticCheckCoffeescript()<cr>
 
 

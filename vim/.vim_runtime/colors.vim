@@ -1,1 +1,0 @@
-/home/alex/.vim_runtime/light.vim
