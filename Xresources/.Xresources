@@ -31,9 +31,9 @@ URxvt.clipboard.copycmd: xsel -ib
 URxvt.clipboard.pastecmd: xsel -ob
 
 ! Fonts !
-#define termfont      xft:Tewi:pixelsize=11:antialias=false
+#define termfont      xft:lucy tewi:pixelsize=9:antialias=false
 URxvt.font:           termfont
-URxvt.boldFont:       termfont
+URxvt.boldFont:       xft:lucy tewi:style=Bold:pixelsize=9:antialias=false
 URxvt.italicFont:     termfont
 URxvt.boldItalicFont: termfont
 

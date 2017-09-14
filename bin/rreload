@@ -2,7 +2,7 @@
 
 #pgrep rustabari |awk 'NR >= 2' | xargs -n1 kill > /dev/null
 killall rustabari lemonbar > /dev/null
-rustabari | lemonbar -p -f $iconfont -f "Tewi:size=9" -g 1920x30 &
+rustabari | lemonbar -p -f $iconfont -f "lucy tewi:pixelsize=9:antialias=false" -g 1920x30 &
 
 sleep 0.1
 xdo lower -n lemonbar
