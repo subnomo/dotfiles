@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+# cargo-cb (check-build)
+# Runs `cargo check` followed by `cargo build` if there are no errors
+
+if [ "$1" == "cb" ]; then
+    args=${@:2}
+else
+    args=$@
+fi
+
+script -qec "cargo check $args" cargo_cb_out > /dev/null
+exit_code=$?
+
+# If exit code == 0, build
+if [ $exit_code -eq 0 ]; then
+    cargo build $args
+    exit_code=$?
+else
+    cat cargo_cb_out | sed "1d" | head -n -2
+fi
+
+rm cargo_cb_out
+exit $exit_code

@@ -37,6 +37,8 @@ end
 #status --is-interactive; and . (pyenv virtualenv-init -|psub)
 #status --is-interactive; and . (rbenv init -|psub)
 
+
+# Hacky fish history
 set -g __fish_history_file        ~/.local/share/fish/fish_history
 set -g __fish_history_backup_file $__fish_history_file.bak
 set -g __fish_history_pid_file    $__fish_history_file.pid
