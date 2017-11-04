@@ -13,4 +13,3 @@ case "$1" in
         mpv --geometry=640x360+1280+30 --load-unsafe-playlists $@
         ;;
 esac
-

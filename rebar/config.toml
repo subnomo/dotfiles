@@ -3,8 +3,10 @@
 update_interval = 1
 
 separator = " | "
-#background = "#161719"
-foreground = "#f4dcdc"
+background = "#000000"
+background_opacity = 40
+foreground = "#dddddd"
+# foreground_opacity = 100
 wm = "bspwm"
 
 [[module]]
@@ -41,7 +43,7 @@ separator = " | "
 
     [[module.block]]
     kind = "music"
-    command = "gpmdp-remote current"
+    command = "mpc current"
     icon = "\uE1A6"
     icon_align = "left"
 
