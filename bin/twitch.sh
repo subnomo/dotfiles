@@ -8,5 +8,5 @@ else
     quality=$2
 fi
 
-livestreamer "twitch.tv/"$1 $quality &
+streamlink "https://twitch.tv/"$1 $quality "${@:3}" &
 chromium --app="http://www.twitch.tv/"$1"/chat?popout=" &

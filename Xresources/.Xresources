@@ -32,10 +32,11 @@ URxvt.clipboard.pastecmd: xsel -ob
 
 ! Fonts !
 #define termfont      xft:lucy tewi:pixelsize=9:antialias=false
+!#define termfont      xft:scientifica:size=9
 URxvt.font:           termfont
-URxvt.boldFont:       xft:lucy tewi:style=Bold:pixelsize=9:antialias=false
-URxvt.italicFont:     termfont
-URxvt.boldItalicFont: termfont
+URxvt.boldFont:       termfont:style=Bold
+!URxvt.italicFont:     termfont:style=Italic
+!URxvt.boldItalicFont: termfont
 
 !URxvt.letterSpace: -1
 !URxvt.font: xft:Sauce Code Powerline:size=10

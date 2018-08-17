@@ -2,7 +2,7 @@
 
 dir=$(echo $1 | cut -d ' ' -f 1)
 
-bspc node -z $1
+bspc node -z "$@"
 
 if [ $? -eq 1 ]; then
     case $dir in
@@ -20,6 +20,5 @@ if [ $? -eq 1 ]; then
             ;;
     esac
 
-    set -- $1
-    bspc node -z $dir ${@:2}
+    bspc node -z "$dir" "${@:2}"
 fi

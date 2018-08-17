@@ -2,7 +2,7 @@
 
 #pgrep rebar |awk 'NR >= 2' | xargs -n1 kill > /dev/null
 killall rebar lemonbar > /dev/null
-rebar | lemonbar -p -f $iconfont -f "lucy tewi:pixelsize=9:antialias=false" -g 1920x30 &
+RUST_BACKTRACE=1 unbuffer rebar | tee /tmp/rebar.log | lemonbar -p -f $iconfont -f "lucy tewi:pixelsize=9:antialias=false" -g 1920x30 &
 
 sleep 0.1
 xdo lower -n lemonbar

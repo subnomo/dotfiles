@@ -1,6 +1,6 @@
 [bar]
 # Update interval, in seconds
-update_interval = 1
+update_interval = 5
 
 separator = " | "
 background = "#000000"
@@ -52,6 +52,7 @@ separator = " | "
     # icon = "\uE1FF"
     icons = ["\uE1FD", "\uE1FE", "\uE1FF"]
     icon_align = "right"
+    monitor_battery = true
 
     [[module.block]]
     kind = "date"
