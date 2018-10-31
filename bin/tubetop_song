@@ -1,0 +1,9 @@
+#!/bin/sh
+
+song=$(xdotool getwindowname $(xdotool search --desktop 2 tubetop &> /dev/stdout | tail -n 1) | rev | cut -d- -f2- | rev)
+
+if [ "$song" == "tubetop" ] || [[ "$song" == *"tubetop_song"* ]]; then
+    echo ""
+else
+    echo $song
+fi

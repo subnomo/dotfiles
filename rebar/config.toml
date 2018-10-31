@@ -4,7 +4,7 @@ update_interval = 5
 
 separator = " | "
 background = "#000000"
-background_opacity = 40
+background_opacity = 60
 foreground = "#dddddd"
 # foreground_opacity = 100
 wm = "bspwm"
@@ -43,7 +43,7 @@ separator = " | "
 
     [[module.block]]
     kind = "music"
-    command = "mpc current"
+    command = "whatsong"
     icon = "\uE1A6"
     icon_align = "left"
 

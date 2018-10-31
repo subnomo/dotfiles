@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+
+tube=$(tubetop_song)
+
+if [ -z "$tube" ]; then
+    mpc current
+else
+    echo "$tube"
+fi

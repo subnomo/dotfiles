@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# Sticky twitch player
+# (requires streamlink)
+#
+
+case "$1" in
+    -n|--no-stick)
+        bspc rule -a mpv --one-shot state=floating border=off
+        streamlink "https://twitch.tv/"${@:2} best --player "mpv --geometry=640x360+1280+30 --load-unsafe-playlists"
+        ;;
+    *)
+        bspc rule -a mpv --one-shot state=floating border=off sticky=on
+        streamlink "https://twitch.tv/"$@ best --player "mpv --geometry=640x360+1280+30 --load-unsafe-playlists"
+        ;;
+esac
