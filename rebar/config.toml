@@ -1,6 +1,6 @@
 [bar]
 # Update interval, in seconds
-update_interval = 5
+update_interval = 1
 
 separator = " | "
 background = "#000000"
@@ -46,6 +46,8 @@ separator = " | "
     command = "whatsong"
     icon = "\uE1A6"
     icon_align = "left"
+    click_icons = [["\uE054"], ["\uE058", "\uE059"], ["\uE05A"]]
+    click_commands = [["mpc prev"], ["mpc toggle", "mpc toggle"], ["mpc next"]]
 
     [[module.block]]
     kind = "battery"

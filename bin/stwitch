@@ -4,13 +4,27 @@
 # (requires streamlink)
 #
 
+quality=""
+
+if [ -z "$2" ]; then
+    quality="best"
+else
+    quality=$2
+fi
+
 case "$1" in
     -n|--no-stick)
+        if [ -z "$3" ]; then
+            quality="best"
+        else
+            quality=$3
+        fi
+
         bspc rule -a mpv --one-shot state=floating border=off
-        streamlink "https://twitch.tv/"${@:2} best --player "mpv --geometry=640x360+1280+30 --load-unsafe-playlists"
+        streamlink "https://twitch.tv/"$2 $quality --player "mpv --geometry=640x360+1280+30 --load-unsafe-playlists"
         ;;
     *)
         bspc rule -a mpv --one-shot state=floating border=off sticky=on
-        streamlink "https://twitch.tv/"$@ best --player "mpv --geometry=640x360+1280+30 --load-unsafe-playlists"
+        streamlink "https://twitch.tv/"$1 $quality --player "mpv --geometry=640x360+1280+30 --load-unsafe-playlists"
         ;;
 esac

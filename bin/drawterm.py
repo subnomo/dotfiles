@@ -1,7 +1,14 @@
 #!/usr/bin/env python3
+#
+# Spawns a terminal where drawn
+# Requires: bspwm, slop, xdotool
 
 from time import sleep
 from subprocess import run, Popen
+
+
+# Change to desired terminal
+terminal = 'kitty'
 
 slop_cmd = ['slop', '-t', '0', '-b', '2', '-c', '1,1,1,1', '-f',
             '%w %h %x %y', '--nokeyboard']
@@ -22,7 +29,7 @@ if int(w) > 1:
     run(float_cmd)
 
     win = spawn_win = get_window()
-    Popen(['kitty'])
+    Popen([terminal])
 
     while win == spawn_win:
         win = get_window()

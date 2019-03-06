@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh
 
 tube=$(tubetop_song)
 

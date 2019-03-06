@@ -42,4 +42,5 @@ bspc config focused_border_color "#AE8876"
 
 #bspc config presel_border_color "#7F8C8D"
 
-rebar | lemonbar -p -f $iconfont -f "lucy tewi:pixelsize=9:antialias=false" -g 1920x30 &
+rebar | lemonbar -p -f $iconfont -f "lucy tewi:pixelsize=9:antialias=false" -g 1920x30 | sh &
+

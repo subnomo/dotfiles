@@ -3,7 +3,8 @@
 #
 
 alias netflix='google-chrome-stable --app="https://netflix.com/"'
-alias plex='chromium --app="https://app.plex.tv/web/app"'
+#alias plex='chromium --app="https://app.plex.tv/web/app"'
+alias plex='plexmediaplayer --scale-factor=1'
 alias urnn='$HOME/.config/urnn/urnn'
 alias redact='unset HISTFILE'
 alias c='clear'
@@ -12,6 +13,10 @@ alias ll='exa -l'
 alias la='exa -la'
 alias ssh='TERM=linux ssh'
 alias cat='bat'
+alias yt-mp3='youtube-dl -x --audio-format mp3 --output "%(title)s.%(ext)s"'
+
+# LAN default + font smoothing
+alias rdesktop='rdesktop -x 0x80'
 
 # Colored manpages
 function man() {
