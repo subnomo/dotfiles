@@ -10,8 +10,6 @@
 #    eval $HOME/.config/colors/$theme.fish
 #end
 
-wal -r &
-
 if not pgrep -f ssh-agent > /dev/null
     ssh_agent > /dev/null 2>&1
 end

@@ -1,8 +1,17 @@
 #!/bin/sh
 
 tube=$(tubetop_song)
+spotify=$(playerctl -l)
 
-if [ -z "$tube" ]; then
+if [[ "$spotify" == *"spotify"* ]]; then
+    playerctl --player=spotify metadata artist >> /tmp/spotartist 2>&1 &
+    playerctl --player=spotify metadata title >> /tmp/spottitle 2>&1 &
+
+    artist=$(cat /tmp/spotartist | tail -n 1)
+    title=$(cat /tmp/spottitle | tail -n 1)
+
+    echo "$artist - $title"
+elif [ -z "$tube" ]; then
     mpc current
 else
     echo "$tube"

@@ -14,6 +14,7 @@ alias la='exa -la'
 alias ssh='TERM=linux ssh'
 alias cat='bat'
 alias yt-mp3='youtube-dl -x --audio-format mp3 --output "%(title)s.%(ext)s"'
+alias rg='rg --smart-case'
 
 # LAN default + font smoothing
 alias rdesktop='rdesktop -x 0x80'

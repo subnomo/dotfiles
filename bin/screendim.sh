@@ -7,7 +7,7 @@
 
 XBL=$(xbacklight -get)
 
-if [[ "$XBL" == "4."* ]]; then
+if [[ "$XBL" == "5."* ]]; then
     xset dpms 600 600 600 && xset s on
     xbacklight -set 100
 else

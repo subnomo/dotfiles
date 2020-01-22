@@ -12,9 +12,9 @@ if [[ $UID != 0 ]]; then
     exit 1
 fi
 
-if [ -z $1 ]; then echo "usage: age filename"; exit 1; fi
+if [ -z "$1" ]; then echo "usage: age filename"; exit 1; fi
 
-inode=$(ls -i $1 | cut -d ' ' -f 1)
+inode=$(ls -i "$1" | cut -d ' ' -f 1)
 
 time=$(debugfs -R "stat <$inode>" $device 2> /dev/null | grep crtime | cut -d' ' -f4-)
 
