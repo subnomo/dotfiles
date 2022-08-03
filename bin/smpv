@@ -8,6 +8,10 @@ case "$1" in
         bspc rule -a mpv --one-shot state=floating border=off
         mpv --geometry=640x360+1280+30 --load-unsafe-playlists ${@:2}
         ;;
+    -a|--above)
+        bspc rule -a mpv --one-shot state=floating border=off sticky=on layer=above
+        mpv --geometry=640x360+1280+30 --load-unsafe-playlists ${@:2}
+        ;;
     *)
         bspc rule -a mpv --one-shot state=floating border=off sticky=on
         mpv --geometry=640x360+1280+30 --load-unsafe-playlists $@

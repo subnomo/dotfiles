@@ -5,8 +5,8 @@
 alias netflix='google-chrome-stable --app="https://netflix.com/"'
 #alias plex='chromium --app="https://app.plex.tv/web/app"'
 alias plex='plexmediaplayer --scale-factor=1'
-alias urnn='$HOME/.config/urnn/urnn'
 alias redact='unset HISTFILE'
+alias rd='redact'
 alias c='clear'
 alias ls='exa'
 alias ll='exa -l'
@@ -15,6 +15,8 @@ alias ssh='TERM=linux ssh'
 alias cat='bat'
 alias yt-mp3='youtube-dl -x --audio-format mp3 --output "%(title)s.%(ext)s"'
 alias rg='rg --smart-case'
+alias cls='clear && printf "\e[3J"'
+#alias google-chrome-stable='google-chrome-stable --force-dark-mode'
 
 # LAN default + font smoothing
 alias rdesktop='rdesktop -x 0x80'
@@ -35,4 +37,9 @@ function man() {
 
 transfer() {
     curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename $1) | tee /dev/null;
+}
+
+here() {
+    local term=$(ps -aux | grep `ps -p $$ -o ppid=` | awk 'NR==1{print $11}')
+    (nohup $term &>/dev/null &)
 }

@@ -55,3 +55,5 @@ zstyle ':completion:*:*:mpv:*' file-patterns '*.(#i)(flv|mp4|webm|mkv|wmv|mov|av
 (/bin/cat ~/.cache/wal/sequences &)
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+autoload zmv
